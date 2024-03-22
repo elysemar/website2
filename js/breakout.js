@@ -108,7 +108,10 @@ function movePaddle() {
 
 // keydown event
 function keyDown(e) {
-    console.log(e.key)
+    // console.log(e.key)
+    if (e.key == 'ArrowRight' || e.key == 'Right') {
+        
+    }
 }
 // keyboard event handlers
 document.addEventListener('keydown', keyDown)
