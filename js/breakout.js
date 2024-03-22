@@ -104,7 +104,12 @@ function draw() {
     drawBricks()
 }
 
+function moveBall() {
+    ball.x = ball.x 
+}
+
 function update() {
+    moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
