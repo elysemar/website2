@@ -94,10 +94,11 @@ console.log(bricks)
 
 // draw everything
 function draw() {
-drawBall()
-drawPaddle()
-drawScore()
-drawBricks()
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+    drawBall()
+    drawPaddle()
+    drawScore()
+    drawBricks()
 }
 
 // move paddle on canvas
@@ -110,7 +111,7 @@ function movePaddle() {
 function keyDown(e) {
     // console.log(e.key)
     if (e.key == 'ArrowRight' || e.key == 'Right') {
-        
+        paddle.dx = paddle.speed
     }
 }
 // keyboard event handlers
