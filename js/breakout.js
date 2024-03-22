@@ -114,8 +114,17 @@ function keyDown(e) {
         paddle.dx = paddle.speed
     }
 }
+// keyUp event
+function keyUp(e) {
+    if (e.key == 'ArrowRight' || e.key == 'Right') {
+        paddle.dx = 0
+    }
+}
+
 // keyboard event handlers
 document.addEventListener('keydown', keyDown)
+document.addEventListener('keyUp', keyUp)
+
 
 // update the canvas drawing and animation
 function update() {
