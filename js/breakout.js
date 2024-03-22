@@ -105,6 +105,14 @@ function movePaddle() {
     paddle.x = paddle.x + paddle.dx
 }
 
+
+// keydown event
+function keyDown(e) {
+    console.log(e.key)
+}
+// keyboard event handlers
+document.addEventListener('keydown', keyDown)
+
 // update the canvas drawing and animation
 function update() {
     movePaddle()
