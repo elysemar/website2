@@ -36,6 +36,12 @@ brickInfo = {
 
 }
 
+
+
+score = 0
+brickRowCount = 9
+brickColumnCount = 5
+
 // create bricks
 bricks = []
 for(let i = 0; i <brickRowCount; i++) {
@@ -46,10 +52,6 @@ for(let i = 0; i <brickRowCount; i++) {
         bricks[i][j] = {x, y, ...brickInfo}
     }
 }
-
-score = 0
-brickRowCount = 9
-brickColumnCount = 5
 
 // draw ball on canvas
 function drawBall () {
@@ -98,6 +100,10 @@ drawScore()
 drawBricks()
 }
 
+// move paddle on canvas
+function movePaddle() {
+
+}
 
 // update the canvas drawing and animation
 function update() {
