@@ -25,15 +25,80 @@ paddle = {
 
 }
 
+// create brick properties
+brickInfo = {
+    w: 70,
+    h: 20,
+    padding: 10,
+    offsetX: 45,
+    offsetY: 60,
+    visible: true,
+
+}
+
+// create bricks
+bricks = []
+for(let i = 0; i <brickRowCount; i++) {
+    bricks[i] = []
+    for(let j = 0; j < brickColumnCount; j++) {
+        const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
+        const y = j * (brickInfo.h + brickInfo.padding) + brickIndo.offsetY
+        bricks[i][j] = {x, y, ...brickInfo}
+    }
+}
+
+score = 0
+brickRowCount = 9
+brickColumnCount = 5
+
 // draw ball on canvas
 function drawBall () {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2, true); // Outer circle
     ctx.fillStyle = 'rgb(255, 89, 148)';
     ctx.fill()
+    ctx.closePath()
 }
 
+// draw paddle on canvas
+function drawPaddle () {
+    ctx.beginPath();
+    ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
+    ctx.fillStyle = 'rgb(255, 89, 148)';
+    ctx.fill()
+    ctx.closePath()
+}
+
+// draw score on canvas
+function drawScore() {
+    ctx.font ='20px Arial'
+    ctx.fillText(`Score: ${score}`, canvas.width-100, 30)
+}
+
+// draw bricks on canvas
+function drawBricks() {
+    bricks.forEach(column => {
+        column.forEach(brick => {
+            ctx.beginPath()
+            ctx.rect(brick.x, brick.y, brick.w, brick.h)
+            ctx.fillStyle = brick.visible ? 'rgb(255, 89, 148)' : 'transparent';
+            ctx.fill()
+            ctx.closePath()
+        })
+    })
+}
+
+console.log(bricks)
+
+// draw everything
+function draw() {
 drawBall()
+drawPaddle()
+drawScore()
+drawBricks()
+}
+
+draw()
 
 rulesBtn.addEventListener('click', () => {
     rules.classList.add('show')
