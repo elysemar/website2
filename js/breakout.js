@@ -48,7 +48,7 @@ for(let i = 0; i <brickRowCount; i++) {
     bricks[i] = []
     for(let j = 0; j < brickColumnCount; j++) {
         const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
-        const y = j * (brickInfo.h + brickInfo.padding) + brickIndo.offsetY
+        const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY
         bricks[i][j] = {x, y, ...brickInfo}
     }
 }
@@ -102,7 +102,7 @@ drawBricks()
 
 // move paddle on canvas
 function movePaddle() {
-
+    paddle.x = paddle.x + paddle.dx
 }
 
 // update the canvas drawing and animation
