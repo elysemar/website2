@@ -107,6 +107,11 @@ function draw() {
 function moveBall() {
     ball.x = ball.x + ball.dx
     ball.y = ball.y+ ball.dy
+
+    // wall detection (top)
+    if (ball.y + ball.size < 0) {
+        ball.dy = -1 * ball.dy
+       }
 }
 
 function update() {
