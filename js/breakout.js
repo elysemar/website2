@@ -98,7 +98,15 @@ drawScore()
 drawBricks()
 }
 
-draw()
+
+// update the canvas drawing and animation
+function update() {
+    movePaddle()
+    draw()
+    requestAnimationFrame(update)
+}
+
+update()
 
 rulesBtn.addEventListener('click', () => {
     rules.classList.add('show')
