@@ -104,6 +104,11 @@ function draw() {
 // move paddle on canvas
 function movePaddle() {
     paddle.x = paddle.x + paddle.dx
+
+    // wall detection
+    if (paddle.x < 0) {
+        paddle.x = 0
+    }
 }
 
 
