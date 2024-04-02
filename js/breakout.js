@@ -119,7 +119,10 @@ function moveBall() {
     // bottom
     if (ball.y + ball.size > canvas.height) {
         ball.dy = -1 * ball.dy
+        showAllBricks()
+        score = 0
     }
+    // left
     if (ball.x + ball.size < 0) {
         ball.dx = -1 * ball.dx
     }
@@ -147,6 +150,7 @@ function moveBall() {
             }
         })
     })
+
 }
 
 //increase score
