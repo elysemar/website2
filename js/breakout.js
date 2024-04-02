@@ -142,8 +142,27 @@ function moveBall() {
                 ) {
                 ball.dy = -1 * ball.dy
                 brick.visible = false
+                increaseScore()
                 }
             }
+        })
+    })
+}
+
+//increase score
+function increaseScore() {
+    score ++ //score = score + 1
+
+    if (score == brickRow * brickColumnCount) {
+        score = 0
+        showAllBricks()
+    }
+}
+
+function showAllBricks () {
+    bricks.forEach(column => {
+        column.forEach(brick => {
+            brick.visible = true
         })
     })
 }
