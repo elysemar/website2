@@ -140,7 +140,7 @@ function moveBall() {
             if (brick.visible) {
                 if (
                     ball.x - ball.size > brick.x && //left
-                    ball.x + ball.size < brick.x + brick.w //right
+                    ball.x + ball.size < brick.x + brick.w && //right
                     ball.y + ball.size > brick.y && //top
                     ball.y - ball.size < brick.y + brick.h //bottom
                 ) {
@@ -158,7 +158,7 @@ function moveBall() {
 function increaseScore() {
     score ++ //score = score + 1
 
-    if (score == brickRow * brickColumnCount) {
+    if (score == BrickRowCount * BrickColumnCount) {
         score = 0
         showAllBricks()
     }
