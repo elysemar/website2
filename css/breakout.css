@@ -71,19 +71,38 @@ h1 {
     background-color: rgb(255, 89, 148);
     color: #ffffff;
     min-height: 8px;
-    width: 55px;
     padding: 5px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 150%;
     font-weight: 900;
-    border: none;
+    border-color: #edced9;
+    justify-content: center;
 
 }
 
 .start:hover {
     color: #2222;
 }
+
+.lose {
+    position: relative;
+    background-color: rgb(255, 89, 148);
+    color: #ffffff;
+    min-height: 8px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 150%;
+    font-weight: 900;
+    border-color: #edced9;
+    justify-content: center;
+
+}
+
+.lose:hover {
+    color: #2222;
+}
+
 
 
 
