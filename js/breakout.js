@@ -121,7 +121,8 @@ function moveBall() {
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
-        
+        lose.classList.toggle('show')
+
     }
     // left
     if (ball.x + ball.size < 0) {
