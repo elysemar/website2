@@ -179,12 +179,15 @@ function update() {
     //requestAnimationFrame(update)
 }
 
-
 update ()
-start.addEventListener('click', () => {
-        start.classList.add('active')
-    }
-})
+
+if ( start.addEventListener('click', () => {)
+
+// start.addEventListener('click', () => {
+//         start.classList.add('active')
+//     }
+// })
+
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
         paddle.dx = paddle.speed
