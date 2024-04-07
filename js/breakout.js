@@ -182,6 +182,8 @@ function update() {
 
 update ()
 
+
+
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
         paddle.dx = paddle.speed
