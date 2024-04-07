@@ -182,10 +182,13 @@ function update() {
 
 update ()
 
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('active')
-})
-
+function start() {
+    if(window.scrollY > 223) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
         paddle.dx = paddle.speed
