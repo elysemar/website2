@@ -171,17 +171,18 @@ function showAllBricks () {
         })
     })
 }
-
+draw()
 function update() {
-    //moveBall()
-    //movePaddle()
-    draw()
-    //requestAnimationFrame(update)
+    moveBall()
+    movePaddle()
+    requestAnimationFrame(update)
 }
 
-update ()
+// update ()
 
-if ( start.addEventListener('click', () => {)
+if ( start.addEventListener('click') {
+    update()
+}
 
 // start.addEventListener('click', () => {
 //         start.classList.add('active')
