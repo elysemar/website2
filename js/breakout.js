@@ -121,7 +121,7 @@ function moveBall() {
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
-        start.classList.toggle('active')
+        start.classList.add('active')
 
     }
     // left
@@ -173,14 +173,14 @@ function showAllBricks () {
         })
     })
 }
-
+draw()
 function update() {
     moveBall()
     movePaddle()
-    draw()
+
     requestAnimationFrame(update)
 }
-update()
+// update()
 
 // update ()
 
