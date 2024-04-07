@@ -3,7 +3,7 @@ close = document.getElementById('close-btn');
 rules = document.getElementById('rules');
 canvas = document.getElementById('canvas');
 ctx = canvas.getContext('2d');
-
+start = document.getElementById('start-btn');
 score = 0;
 BrickRowCount = 9;
 BrickColumnCount = 5;
@@ -173,11 +173,12 @@ function showAllBricks () {
 }
 
 function update() {
-    moveBall()
-    movePaddle()
+    //moveBall()
+    //movePaddle()
     draw()
-    requestAnimationFrame(update)
+    //requestAnimationFrame(update)
 }
+
 
 update ()
 
@@ -206,3 +207,6 @@ show.addEventListener('click', () => {
 close.addEventListener('click', () => {
     rules.classList.toggle('show')
 })
+// start.addEventListener('click', () => {
+//     rules.classList.toggle('show')
+// })

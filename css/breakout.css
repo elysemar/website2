@@ -63,3 +63,16 @@ h1 {
 .rules.show {
     transform: translateX(0);
 }
+
+.start {
+    position: absolute;
+    background-color: rgb(255, 89, 148);
+    color: #ffffff;
+    min-height: 20vh;
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 110%;
+    font-weight: 900;
+}
