@@ -96,6 +96,7 @@ h1 {
     font-weight: 900;
     border-color: #edced9;
     justify-content: center;
+    opacity: 0;
 
 }
 
@@ -112,5 +113,5 @@ h1 {
 }
 
 .lose.active {
-    opacity: 0;
+    opacity: 1;
 }
