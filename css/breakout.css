@@ -70,19 +70,19 @@ h1 {
     position: relative;
     background-color: rgb(255, 89, 148);
     color: #ffffff;
-    min-height: 10vh;
-    width: 200px;
-    padding: 20px;
+    min-height: 8px;
+    width: 55px;
+    padding: 5px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 110%;
+    font-size: 150%;
     font-weight: 900;
     border: none;
 
 }
 
 .start:hover {
-    
+    color: #2222;
 }
 
 
