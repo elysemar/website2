@@ -181,7 +181,6 @@ function update() {
 
 
 update ()
-start = document.getElementById('start')
 start.addEventListener('click', () => {
         start.classList.add('active')
     }
