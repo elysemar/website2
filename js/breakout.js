@@ -171,12 +171,14 @@ function showAllBricks () {
         })
     })
 }
-draw()
+
 function update() {
     moveBall()
     movePaddle()
+    draw()
     requestAnimationFrame(update)
 }
+update()
 
 // update ()
 
@@ -184,10 +186,10 @@ function update() {
 //     update()
 // }
 
-start.addEventListener('click', () => {
-        update()
-    }
-})
+// start.addEventListener('click', () => {
+//         update()
+//     }
+// })
 
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
