@@ -182,7 +182,9 @@ function update() {
 
 update ()
 
-
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('active')
+})
 
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
