@@ -180,14 +180,14 @@ function update() {
 
 // update ()
 
-if ( start.addEventListener('click') {
-    update()
-}
+// if ( start.addEventListener('click') {
+//     update()
+// }
 
-// start.addEventListener('click', () => {
-//         start.classList.add('active')
-//     }
-// })
+start.addEventListener('click', () => {
+        update()
+    }
+})
 
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
