@@ -181,14 +181,11 @@ function update() {
 
 
 update ()
-
-function start() {
-    if(window.scrollY > 223) {
-        nav.classList.add('active')
-    } else {
-        nav.classList.remove('active')
+start = document.getElementById('start')
+start.addEventListener('click', () => {
+        start.classList.add('active')
     }
-}
+})
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
         paddle.dx = paddle.speed
