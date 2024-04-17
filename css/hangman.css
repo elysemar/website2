@@ -2,6 +2,25 @@
 body {
     background-color: #963b4d;
     color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px 0 0;
+}
+
+.game-container {
+    padding: 20px 30px;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    width: 450px;
 }
 
 .figure-container {
@@ -9,4 +28,45 @@ body {
     stroke: white;
     stroke-width: 4px;
     stroke-linecap:
+}
+
+.figure-part {
+    display: none;
+}
+
+.wrong-letters-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+
+.wrong-letters-container p {
+    margin: 0 00 5px;
+}
+
+.wrong-letters-container span {
+    font-size: 24px;
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.letter {
+    font-size: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify: center;
+    height: 50px;
+    width: 20px;
+    margin: 0 3px;
+    border-bottom: 3px solid #b34f68;
 }

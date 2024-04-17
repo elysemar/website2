@@ -181,7 +181,6 @@ function update() {
 }
 // update()
 
-// update ()
 
 // if ( start.addEventListener('click') {
 //     update()
@@ -217,6 +216,3 @@ show.addEventListener('click', () => {
 close.addEventListener('click', () => {
     rules.classList.toggle('show')
 })
-// start.addEventListener('click', () => {
-//     rules.classList.toggle('show')
-// })
