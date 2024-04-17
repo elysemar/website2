@@ -7,39 +7,48 @@
     <link rel="stylesheet" href="css/insect.css">
 </head>
 <body>
-    <div class="screen">
+    <div class = "screen">
         <h1>Catch The Insect</h1>
-        <button class="btn" id="start-btn">Play Game</button>
+        <button class = "btn" id = "start-btn">Play Game</button>
     </div>
-    <div class="screen">
-        <h1>What is your "favorite" insect?</h1>
-        <ul class="insects-list">
+
+    <div class = "screen">
+        <h1>What is your favorite insect?</h1>
+        <ul class = "insects-list">
             <li>
-                <button class="choose-insect-btn">
+                <button class = "choose-insect-btn">
                     <p>Fly</p>
-                    <img src="images/fly.png" alt="fly">
+                    <img src = "images/fly.png" alt = "fly">
                 </button>
-                <button class="choose-insect-btn">
-                    <p>Mosquito</p>
-                    <img src="images/mosquito.png" alt="mosquito">
+            </li><li>
+                <button class = "choose-insect-btn">
+                    <p>mosquito</p>
+                    <img src = "images/mosquito.png" alt = "mosquito">
                 </button>
-                <button class="choose-insect-btn">
-                    <p>Spider</p>
-                    <img src="images/spider.png" alt="spider">
+            </li>
+            <li>
+                <button class = "choose-insect-btn">
+                    <p>roach</p>
+                    <img src = "images/roach.png" alt = "roach">
                 </button>
-                <button class="choose-insect-btn">
-                    <p>Roach</p>
-                    <img src="images/roach.png" alt="roach">
+            </li>
+            <li>
+                <button class = "choose-insect-btn">
+                    <p>spider</p>
+                    <img src = "images/spider.png" alt = "spider">
                 </button>
             </li>
         </ul>
     </div>
-
     <div class="screen game-container" id="game-container">
-        <h3 class="time" id="time">Time: 00:00</h3>
-        <h3 class="score" id="score">Score: 0</h3>
-        <h5 class="message" id="message">Are you annoyed yet? <br> You are playing an impossible game!</h5>
+        <h3 class="time" id="time">
+            time: 00:00</h3>
+            <h3 id="score" class="score">Score: 0</h3>
+        <h5 id="message" class="message">
+            Are you annoyed yet? <br>
+            You are playing an impossible game!!
+        </h5>
     </div>
 </body>
-<srcipt src="js/insect.js"></srcipt>
+<script src= "js/insect.js"></script>
 </html>
