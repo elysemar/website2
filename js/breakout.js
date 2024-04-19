@@ -7,6 +7,7 @@ start = document.getElementById('start-btn');
 score = 0;
 BrickRowCount = 9;
 BrickColumnCount = 5;
+buttonPressed = false;
 
 ball = {
     x: canvas.width / 2,
@@ -174,16 +175,20 @@ function showAllBricks () {
     })
 }
 // draw()
-function update() {
-    if  (start.addEventListener('click')) {
-    moveBall()
-    movePaddle()
-    requestAnimationFrame(update)
-    draw()
-    }
-}
-update()
 
+start.addEventListener('click', () => {
+    buttonPressed = true;
+})
+function update() {
+        moveBall()
+        movePaddle()
+        requestAnimationFrame(update)
+        draw()
+
+}
+if (buttonPressed = true) {
+    update()
+}
 
 
 // start.addEventListener('click', update())
