@@ -174,6 +174,7 @@ function showAllBricks () {
     })
 }
 // draw()
+
 function update() {
     moveBall()
     movePaddle()
@@ -183,9 +184,6 @@ function update() {
 update()
 
 
-// if ( start.addEventListener('click') {
-//     update()
-// }
 
 // start.addEventListener('click', update())
 
