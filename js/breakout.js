@@ -174,12 +174,13 @@ function showAllBricks () {
     })
 }
 // draw()
-
 function update() {
+    if  (start.addEventListener('click')) {
     moveBall()
     movePaddle()
     requestAnimationFrame(update)
     draw()
+    }
 }
 update()
 
