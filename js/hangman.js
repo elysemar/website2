@@ -25,7 +25,6 @@ function displayWord() {
             </span>
             ` ).join('')
             }
-
     `
 }
 
