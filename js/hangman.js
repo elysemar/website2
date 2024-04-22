@@ -11,3 +11,21 @@ const word = ['application', 'programming', 'interface', 'wizard]
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = words[selectedIndex]
 
+const correctLetters = []
+const wrongLetter = []
+
+// Show hidden word
+function displayWord() {
+    wordEl.innerHTML =  `
+        ${selectedWord
+            .split('')
+            .map(letter => `
+            <span class="letter">
+                ${correctLetters.includes(letter) ? letter : ''}
+            </span>
+            `)}
+
+    `
+}
+
+displayWord()
