@@ -100,17 +100,8 @@ h1 {
 
 }
 
-.lose:hover {
-    color: #2222;
-}
 
 
-
-
-.start.active
-{
-    opacity 0;
-}
 
 .lose.active {
     opacity: 1;

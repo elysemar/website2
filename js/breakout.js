@@ -4,10 +4,11 @@ rules = document.getElementById('rules');
 canvas = document.getElementById('canvas');
 ctx = canvas.getContext('2d');
 start = document.getElementById('start-btn');
+lose = document.getElementById('lose-btn');
 score = 0;
 BrickRowCount = 9;
 BrickColumnCount = 5;
-buttonPressed = false;
+
 
 ball = {
     x: canvas.width / 2,
@@ -122,8 +123,7 @@ function moveBall() {
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
-        start.classList.add('active')
-
+        lose.classList.add('active')
     }
     // left
     if (ball.x + ball.size < 0) {
@@ -174,24 +174,33 @@ function showAllBricks () {
         })
     })
 }
-// draw()
+draw()
 
 start.addEventListener('click', () => {
-    buttonPressed = true;
+    update()
+}, {once:true})
+
+start.addEventListener('click', () => {
+    lose.classList.remove('active')
+    score: 0;
 })
+
+// lose.addEventListener('click', () => {
+//     update()
+// } , {once:true})
+
+// lose.addEventListener('click', () => {
+//     start.classList.remove('active')
+//     lose.classList.remove('active')
+// })
+
 function update() {
         moveBall()
         movePaddle()
         requestAnimationFrame(update)
         draw()
-
-}
-if (buttonPressed = true) {
-    update()
 }
 
-
-// start.addEventListener('click', update())
 
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
