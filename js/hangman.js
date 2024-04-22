@@ -35,6 +35,22 @@ function displayWord() {
     }
 }
 
+
+// Update the wrong letters
+function updateTheWrongLetters () {
+    console.log('Update Wrong')
+}
+
+// Show Notification
+function showNotification() {
+    notification.classList.add('show')
+
+    setTimeout(() => {
+        notification.classList.remove('show')
+    }, 2000)
+}
+
+}
 // Keydown letter press
 window.addEventListener('keydown', e => {
 
