@@ -1,6 +1,6 @@
 const wordEl = document.getElementById('word')
 wrongLettersEl = document.getElementById('wrong-letters')
-const plaAgainBtn = document.getElementById('play-again')
+const plaAgainBtn = document.getElementById('play-button')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
@@ -38,7 +38,27 @@ function displayWord() {
 
 // Update the wrong letters
 function updateTheWrongLetters () {
-    console.log('Update Wrong')
+    wrongLettersEl.innerHTML = `
+        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+        ${wrongLetters.map(`letter => '<span>${letter}</span>`)}
+    `
+
+    figureParts.forEach((part, index) => {
+        const errors = wrongLetters.length
+
+        if (index < errors) {
+            part.style.display = 'block'
+        } else {
+            part.style.display = 'none'
+        }
+
+    })
+
+    //Check if lost
+    if (wrongLetters.length == figureParts.length) {
+        finalMessage.innerText = 'Unfortunately you lost!'
+        popup.style.display = 'flex'
+    }
 }
 
 // Show Notification
@@ -51,6 +71,8 @@ function showNotification() {
 }
 
 }
+
+
 // Keydown letter press
 window.addEventListener('keydown', e => {
 
@@ -78,4 +100,13 @@ window.addEventListener('keydown', e => {
     }
 })
 
+// Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+    correctLetters.length = 0
+    wrongLetters.length = 0
+    selectedIndex = Math.floor(word.)
+    length * Math.random
+})
 
+
+displayWord()
