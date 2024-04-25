@@ -8,6 +8,7 @@ lose = document.getElementById('lose-btn');
 score = 0;
 BrickRowCount = 9;
 BrickColumnCount = 5;
+pressStart = false;
 
 
 ball = {
@@ -124,6 +125,7 @@ function moveBall() {
         showAllBricks()
         score = 0
         lose.classList.add('active')
+        pressStart = false;
     }
     // left
     if (ball.x + ball.size < 0) {
@@ -177,28 +179,24 @@ function showAllBricks () {
 draw()
 
 start.addEventListener('click', () => {
-    update()
-}, {once:true})
-
-start.addEventListener('click', () => {
-    lose.classList.remove('active')
-    score: 0;
+    pressStart = true;
 })
 
-// lose.addEventListener('click', () => {
-//     update()
-// } , {once:true})
-
-// lose.addEventListener('click', () => {
-//     start.classList.remove('active')
+// start.addEventListener('click', () => {
 //     lose.classList.remove('active')
+//     score: 0;
+//     // ball.x =
+//     // ball.y =
 // })
-
+update()
 function update() {
-        moveBall()
-        movePaddle()
-        requestAnimationFrame(update)
+
+    moveBall()
+    movePaddle()
+    requestAnimationFrame(update)
+    if (pressStart) {
         draw()
+    }
 }
 
 
