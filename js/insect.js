@@ -11,7 +11,7 @@ let selected_insect = {}
 const win = document.getElementById('win')
 const loss = document.getElementById('loss')
 
-
+ 
 start_btn.addEventListener('click', () => {
     screens[0].classList.add('up')
 })
