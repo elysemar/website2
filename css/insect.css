@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Barriecito&family=Concert+One&family=Madimi+One&family=Martian+Mono:wght@100..800&family=Quicksand:wght@300..700&family=Signika:wght@300..700&family=Yusei+Magic&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #eb928a;
-    font-family: "Martian Mono", monospace;
+    background-color: #dea0b8;
+    color: white;
+    font-family: "Press Start 2P", system-ui;
     height: 100vh;
     overflow: hidden;
     text-align: center;
-    color: #ffffff;
 }
 
 .choose-insect-btn img {
@@ -30,15 +32,15 @@ body {
 
 .btn {
     border: 0;
-    background-color: #ffffff;
-    color: #eb928a;
+    background-color: white;
+    color: #dea0b8;
     padding: 15px 20px;
     cursor: pointer;
     font-family: inherit;
 }
 
 .btn:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .screen.up {
@@ -67,21 +69,21 @@ h1 {
 
 .choose-insect-btn {
     background-color: transparent;
-    border: 2px solid #fff;
-    font-family: inherit;
+    border: 2px solid white;
     color: white;
     cursor: pointer;
+    font-family: inherit;
     width: 150px;
     height: 150px;
 }
 
 .choose-insect-btn:hover {
     background-color: white;
-    color: #eb928a;
+    color: #dea0b8;
 }
 
-.choose-insect-btn:active {
-    background-color: rgba(255, 255, 255, 0.7);
+.choose-insect.btn:active {
+    background-color: rgba(255,255,255, 0.7);
 }
 
 .game-container {
@@ -101,9 +103,10 @@ h1 {
 }
 
 .message {
+    opacity: 0;
     line-height: 1.7;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     z-index: 100;
     padding: 20px;
     text-align: center;
@@ -112,11 +115,10 @@ h1 {
     left: 50%;
     transform: translate(-50%, -150%);
     transition: transform 0.4s ease-in;
-    opacity: 0;
-
 }
 
 .message.visible {
+    opacity: 1;
     transform: translate(-50%, 150%);
 }
 
@@ -128,15 +130,67 @@ h1 {
     width: 100px;
     height: 100px;
     position: absolute;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform o.3s ease-in-out;
 }
 
 .insect.caught {
     transform: translate(-50%, -50%) scale(0);
+}
+
+.insect img {
+    width: 100px;
+    height: 100px;
+}
+
+.win {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    line-height: 1.7;
+    width: 100vw;
+    z-index: 100;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    transform: translate(-50%, -150%);
     transition: transform 0.4s ease-in;
 }
 
-.insect.img {
-    width: 100px;
-    height: 100px;
+.win.visible {
+    opacity: 1;
+    transform: translate(-50%, 150%);
+}
+
+.loss {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    line-height: 1.7;
+    width: 100vw;
+    z-index: 100;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    transform: translate(-50%, -150%);
+    transition: transform 0.4s ease-in;
+}
+
+.loss.visible {
+    opacity: 1;
+    transform: translate(-50%, 150%);
+}
+
+body .link {
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    opacity: 0.8;
+    left: 0;
+    margin: 20px;
+    border-radius: 50px;
+
 }
