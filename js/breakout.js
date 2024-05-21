@@ -180,14 +180,9 @@ draw()
 
 start.addEventListener('click', () => {
     pressStart = true;
+    lose.classList.remove('active')
 })
 
-// start.addEventListener('click', () => {
-//     lose.classList.remove('active')
-//     score: 0;
-//     // ball.x =
-//     // ball.y =
-// })
 update()
 function update() {
 
@@ -225,3 +220,4 @@ show.addEventListener('click', () => {
 close.addEventListener('click', () => {
     rules.classList.toggle('show')
 })
+
