@@ -1,112 +1,112 @@
 const wordEl = document.getElementById('word')
-wrongLettersEl = document.getElementById('wrong-letters')
-const plaAgainBtn = document.getElementById('play-button')
+const wrongLettersEl = document.getElementById('wrong-letters')
+const playAgainBtn = document.getElementById('play-button')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
+let stopGame = false;
 
-const word = ['application', 'programming', 'interface', 'wizard]
+const word = ['aplication', 'programing', 'interface', 'wizard']
 
 let selectedIndex = Math.floor(word.length * Math.random())
-let selectedWord = words[selectedIndex]
+let selectedWord = word[selectedIndex]
 
 const correctLetters = []
-const wrongLetter = []
+const wrongLetters = []
 
-// Show hidden word
-function displayWord() {
-    wordEl.innerHTML =  `
-        ${selectedWord
-            .split('')
-            .map(letter => `
-            <span class="letter">
-                ${correctLetters.includes(letter) ? letter : ''}
-            </span>
-            ` ).join('')
-            }
+function displayWord(){
+    wordEl.innerHTML = `
+    ${selectedWord
+        .split('')
+        .map(letter => `
+    <span class = "letter">
+        ${correctLetters.includes(letter) ? letter : ''}
+    </span>
+
+    `).join('')}
+
     `
+    const innerWord=wordEl.innerText.replace(/\n/g, '')
 
-    const innerWord = wordEl.innerText.replace(/\n/g, '')
-
-    if(innerWord == selectedWord) {
-        finalMessage.innerText = 'Congratulations! You Won!'
+    if(innerWord == selectedWord){
+        finalMessage.innerText = 'Congratulations!!! You won 😊!'
         popup.style.display = 'flex'
+        stopGame = true;
     }
 }
 
-
-// Update the wrong letters
-function updateTheWrongLetters () {
-    wrongLettersEl.innerHTML = `
-        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
-        ${wrongLetters.map(`letter => '<span>${letter}</span>`)}
+function updateWrongLettersEl(){
+    wrongLettersEl.innerHTML= `
+    ${wrongLetters.length > 0 ? '<p>wrong</p>' : ''}
+    ${wrongLetters.map(letter => `<span>${letter}<span>`)}
     `
 
-    figureParts.forEach((part, index) => {
-        const errors = wrongLetters.length
+    figureParts.forEach((part,index) => {
+        const errors =wrongLetters.length
 
-        if (index < errors) {
-            part.style.display = 'block'
-        } else {
+        if(index < errors){
+            part.style.display ='block'
+        }else{
             part.style.display = 'none'
         }
-
     })
 
-    //Check if lost
-    if (wrongLetters.length == figureParts.length) {
-        finalMessage.innerText = 'Unfortunately you lost!'
+    if(wrongLetters.length == figureParts.length){
+        finalMessage.innerText = 'You lost! ☹️ The word was ' + selectedWord + '!'
         popup.style.display = 'flex'
+        stopGame = true;
     }
 }
 
-// Show Notification
-function showNotification() {
+
+function showNotification(){
     notification.classList.add('show')
 
-    setTimeout(() => {
+    setTimeout(() =>{
         notification.classList.remove('show')
     }, 2000)
 }
 
-}
+window.addEventListener('keydown', e=>{
+    if (stopGame) return;
 
+    console.log(e.keyCode)
+    if (e.keyCode >= 65 && e.keyCode <=90){
+        const letter = e.key
 
-// Keydown letter press
-window.addEventListener('keydown', e => {
+        if(selectedWord.includes(letter)){
+            if( !correctLetters.includes(letter)){
+                correctLetters.push(letter)
 
-    if (e.keyCode >= 65 && e.keyCode <=90) {
-            const letter = e.key
-
-            if(selectedWord.includes(letter)) {
-                if( !correctLetter.includes(letter)) {
-                    correctLetters.push(letter)
-
-                    displayWord()
-                } else {
-                    showNotification()
-                } else {
-                    if (!wrongLetters.includes(letter)) {
-                        wrongLetters.push(letter)
-
-                        updateWrongLettersEl()
-                    } else {
-                        showNotification()
-                    }
-                }
-                }
+                displayWord()
+            }else{
+                showNotification()
             }
+        } else{
+            if (!wrongLetters.includes(letter)){
+                wrongLetters.push(letter)
+
+                updateWrongLettersEl()
+            }else{
+                showNotification()
+            }
+        }
     }
 })
 
-// Restart game and play again
 playAgainBtn.addEventListener('click', () => {
+    stopGame = false;
     correctLetters.length = 0
     wrongLetters.length = 0
-    selectedIndex = Math.floor(word.)
-    length * Math.random
-})
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
 
+    displayWord()
+
+    updateWrongLettersEl()
+
+    popup.style.display = 'none'
+})
 
 displayWord()
