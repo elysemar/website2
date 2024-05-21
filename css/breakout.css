@@ -101,8 +101,19 @@ h1 {
 }
 
 
+body .link {
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    opacity: 0.8;
+    right: 0;
+    margin: 20px;
+    border-radius: 50px;
 
+}
 
 .lose.active {
     opacity: 1;
 }
+
